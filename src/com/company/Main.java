@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.for문.LessThanX;
 import com.company.for문.QuickPlus;
 import com.company.for문.Sigma;
 import com.company.for문.Star;
@@ -15,9 +16,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Scanner sc= new Scanner(System.in);
-        int k = sc.nextInt();
-        Star star = new Star();
-        star.Exe(k);
+        int n = sc.nextInt();
+        int x = sc.nextInt();
+        LessThanX lessThanX = new LessThanX();
+        lessThanX.Exe(n,x);
 
     }
 }
