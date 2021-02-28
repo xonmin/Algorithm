@@ -13,13 +13,10 @@ public class Coin {
         for(int i =0; i< n; i++) {
             arr[i] = sc.nextInt();
         }
-
-
     }
 
     public void exe(int n, int k ){
         // logic implement
-
         for(int i = n-1; i>=0;i--){
             if(k/arr[i] >= 0){
                count += k/arr[i];

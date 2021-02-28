@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Atm {
     public void exe(){
-
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int total[] = new int[n];
@@ -13,6 +12,7 @@ public class Atm {
         for(int i = 0 ; i < n; i++){
             total[i] = sc.nextInt();
         }
+
         int min = 0; // 맨 앞에 대기하는 놈 대기 시간 = 0
         // 제일 적게 걸리는 놈이 맨 앞에와야 제일 적은 시간이 걸린다.
         Arrays.sort(total);
@@ -22,6 +22,5 @@ public class Atm {
             sum += min;
         }
         System.out.println(sum);
-
     }
 }

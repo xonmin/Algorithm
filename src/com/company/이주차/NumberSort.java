@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NumberSort {
-
+// 2751
     public void exe( int[] arr) {
             for(int i=0; i<arr.length;i++){
                 for(int j= i+1;j<arr.length;j++){
@@ -27,4 +27,6 @@ public class NumberSort {
         arr.sort(null);
         System.out.println(arr.toString());
     }
+
+
 }
