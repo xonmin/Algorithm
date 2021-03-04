@@ -7,6 +7,7 @@ import com.company.for문.Sigma;
 import com.company.if문.Alarm;
 import com.company.if문.LeapYear;
 import com.company.if문.Quadrant;
+import com.company.사주차.somastory.Execute;
 import com.company.사칙연산.Multiplication;
 import com.company.삼주차.Coin;
 import com.company.삼주차.Zero;
@@ -22,7 +23,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Zero zero= new Zero();
-        zero.exe();
+        Execute execute = new Execute();
+        execute.exe();
     }
 }
