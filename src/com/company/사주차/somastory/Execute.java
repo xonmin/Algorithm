@@ -23,7 +23,7 @@ public class Execute {
         int size = sc.nextInt(); // 스킬셋 연계 개수
 
         // Node currentNode = new Node();
-
+        sc.nextLine();
         for(int i=0;i <size;i++){
 
             String set = sc.nextLine(); // input : skill 연계 ex) x y
