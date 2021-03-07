@@ -11,6 +11,7 @@ import com.company.사주차.somastory.Execute;
 import com.company.사칙연산.Multiplication;
 import com.company.삼주차.Coin;
 import com.company.삼주차.Zero;
+import com.company.오주차.Treasure;
 import com.company.이주차.Fibonazzi;
 import com.company.첫주차.PrimeNumber;
 import com.company.첫주차.Remainder;
@@ -23,7 +24,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Execute execute = new Execute();
-        execute.exe();
+//        Execute execute = new Execute();
+//        execute.exe();
+
+
+        Treasure treasure = new Treasure();
+        treasure.exe();
     }
 }
