@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.W6.Q2;
 import com.company.for문.LessThanX;
 import com.company.for문.QuickPlus;
 import com.company.for문.Sigma;
@@ -28,7 +29,7 @@ public class Main {
 //        execute.exe();
 
 
-        Treasure treasure = new Treasure();
-        treasure.exe();
+        Q2 q2 = new Q2();
+        q2.exe();
     }
 }

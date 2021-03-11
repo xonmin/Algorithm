@@ -29,12 +29,7 @@ public class Execute {
             String set = sc.nextLine(); // input : skill 연계 ex) x y
             String[] arr2 = set.split(" ");
 
-//        for(String s : arr2){ // 스킬 연계 문자하나하나
-//            for(i = 0; i<allSkill.size();i++){
-//                Node tmp = allSkill.get(i);
-//            if(s == tmp.data){
-//
-//            }
+
             for (Node p : allSkill) {
                 if (p.data.equals(arr2[0])) {  //첫번째 문자와 맞는 노드 찾기
                     for (Node c : allSkill) {
@@ -49,20 +44,10 @@ public class Execute {
             }
         }
 
-        // 출력
-//        for (int i = 0; i < allSkill.size(); i++) {
-//            System.out.println(allSkill.get(i).data);
-//            System.out.println(allSkill.get(i).pre);
-//            System.out.println(allSkill.get(i).child);
-//            System.out.println("===================");
-//        }
-//        System.out.println();
         //출력값을 담을 String []
         Node root = allSkill.get(0);
 
-
         sk(root);
-
 
     }
 
@@ -78,8 +63,7 @@ public class Execute {
             System.out.printf(currentNode.pre.getData()+ "->");
             System.out.println(currentNode.getData());
         }
-
-
+        
     }
 
     public void sk(Node root){
