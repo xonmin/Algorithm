@@ -1,5 +1,5 @@
 public class Q4{
-  // 1이 될 
+  // 1이 될 때까지
   public void exe(){
     Scanner sc =  new Scanner(System.in);
 		int n = sc.nextInt();
