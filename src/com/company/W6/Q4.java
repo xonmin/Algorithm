@@ -1,3 +1,8 @@
+package com.company.W6;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Q4{
   // 1이 될 때까지
   public void exe(){
@@ -5,6 +10,8 @@ public class Q4{
 		int n = sc.nextInt();
 		int k = sc.nextInt();
 		int count = 0;
+
+
 		while(true){
 			if(n == 1){
 				break;

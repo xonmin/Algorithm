@@ -28,7 +28,7 @@ public class Main {
 
 //        Execute execute = new Execute();
 //        execute.exe();
-
+        System.out.print("똥 잘쌌니");
 
         Q3 q3 = new Q3();
         q3.exe();
