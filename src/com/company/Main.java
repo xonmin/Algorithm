@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.W6.Q2;
 import com.company.W6.Q3;
+import com.company.W7.Q1;
 import com.company.for문.LessThanX;
 import com.company.for문.QuickPlus;
 import com.company.for문.Sigma;
@@ -28,9 +29,8 @@ public class Main {
 
 //        Execute execute = new Execute();
 //        execute.exe();
-        System.out.print("똥 잘쌌니");
 
-        Q3 q3 = new Q3();
-        q3.exe();
+        Q1 q1 =new Q1();
+        q1.exe();
     }
 }

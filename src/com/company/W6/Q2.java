@@ -14,21 +14,15 @@ public class Q2 {
         Integer [] arr = new Integer[n];
         sc.nextLine();
 
-
-
         for(int i=0;i<n;i++){
             arr[i] =  sc.nextInt();
         }
     // input 끝
-
         // logic
-
         // 정렬
         Arrays.sort(arr, Collections.reverseOrder());
-
        int max  =  arr[0];
        int semi = arr[1];
-
        while(true){
            for(int i =0; i<k; i++) {
                if (m == 0) {
