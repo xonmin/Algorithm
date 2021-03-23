@@ -1,8 +1,9 @@
 package com.company;
 
-import com.company.W6.Q3;
 import com.company.W7.Q1;
 import com.company.W7.Q2;
+import com.company.W7.Q3;
+import com.company.W7.Q4;
 import com.company.for문.LessThanX;
 import com.company.for문.QuickPlus;
 import com.company.for문.Sigma;
@@ -25,12 +26,12 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        Q2 q2 = new Q2();
-        q2.exe();
+        Q4 q4 = new Q4();
+        q4.exe();
     }
 }
