@@ -1,9 +1,6 @@
 package com.company;
 
-import com.company.W7.Q1;
-import com.company.W7.Q2;
-import com.company.W7.Q3;
-import com.company.W7.Q4;
+import com.company.W7.*;
 import com.company.for문.LessThanX;
 import com.company.for문.QuickPlus;
 import com.company.for문.Sigma;
@@ -31,7 +28,7 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        Q4 q4 = new Q4();
-        q4.exe();
+        Combination cmb =  new Combination();
+        cmb.exe();
     }
 }
