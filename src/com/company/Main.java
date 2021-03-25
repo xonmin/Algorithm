@@ -28,7 +28,7 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        Combination cmb =  new Combination();
-        cmb.exe();
+        Scofe scofe = new Scofe();
+        scofe.exe();
     }
 }
