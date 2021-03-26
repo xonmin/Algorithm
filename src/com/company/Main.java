@@ -28,7 +28,7 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        Scofe scofe = new Scofe();
-        scofe.exe();
+     Q4 q4 = new Q4();
+     q4.exe();
     }
 }
