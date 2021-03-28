@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.W7.*;
+import com.company.W8.Q1_DFS;
 import com.company.for문.LessThanX;
 import com.company.for문.QuickPlus;
 import com.company.for문.Sigma;
@@ -28,7 +29,7 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-     Q4 q4 = new Q4();
-     q4.exe();
+        Q1_DFS q1_dfs = new Q1_DFS();
+        q1_dfs.exe();
     }
 }
