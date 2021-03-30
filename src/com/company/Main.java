@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.W7.*;
 import com.company.W8.IcedJuice;
+import com.company.W8.ImplementGame;
 import com.company.W8.Q1_DFS;
 import com.company.for문.LessThanX;
 import com.company.for문.QuickPlus;
@@ -30,7 +31,7 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        IcedJuice icedJuice = new IcedJuice();
-        icedJuice.exe();
+        ImplementGame ig = new ImplementGame();
+        ig.exe();
     }
 }
