@@ -17,6 +17,7 @@ public class ImplementGame {
 
         n = sc.nextInt();
         m = sc.nextInt();
+        map = new int [n][m];
         locationX = sc.nextInt();
         locationY = sc.nextInt();
         view = sc.nextInt();
@@ -35,7 +36,7 @@ public class ImplementGame {
                 dfs(i,j);
             }
         }
-
+        System.out.println(visitcount);
 
     }
 
