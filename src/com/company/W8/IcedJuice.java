@@ -40,7 +40,6 @@ public class IcedJuice {
             dfs(x,y-1);
             dfs(x+1,y);
             dfs(x,y+1);
-
                 return true;
         }
         return false; //방문했었다면

@@ -37,7 +37,6 @@ public class ImplementGame {
             }
         }
         System.out.println(visitcount);
-
     }
 
     public static boolean dfs(int x, int y){
@@ -55,7 +54,6 @@ public class ImplementGame {
         }
         return false;
     }
-
 
     public static void turn(){ // 시점 변환
         view -=1;

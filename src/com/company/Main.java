@@ -4,6 +4,7 @@ import com.company.W7.*;
 import com.company.W8.IcedJuice;
 import com.company.W8.ImplementGame;
 import com.company.W8.Q1_DFS;
+import com.company.W9.DeliveryStrategy;
 import com.company.for문.LessThanX;
 import com.company.for문.QuickPlus;
 import com.company.for문.Sigma;
@@ -31,7 +32,7 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        ImplementGame ig = new ImplementGame();
-        ig.exe();
+        DeliveryStrategy ds = new DeliveryStrategy();
+        ds.exe();
     }
 }
