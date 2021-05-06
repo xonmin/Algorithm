@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.W10.TopDown;
 import com.company.W7.*;
 import com.company.W8.IcedJuice;
 import com.company.W8.ImplementGame;
@@ -33,7 +34,8 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        EscapeMaze em = new EscapeMaze();
-        em.exe();
+        TopDown td = new TopDown();
+        td.exe();
+
     }
 }
