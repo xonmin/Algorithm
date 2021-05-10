@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.W10.ElementChange;
+import com.company.W10.ItemArrangement;
 import com.company.W10.LowerGrade;
 import com.company.W10.TopDown;
 import com.company.W7.*;
@@ -36,8 +37,8 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        ElementChange ec = new ElementChange();
-        ec.exe();
+        ItemArrangement ia  = new ItemArrangement();
+        ia.exe();
 
     }
 }
