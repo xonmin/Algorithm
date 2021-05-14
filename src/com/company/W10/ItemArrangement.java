@@ -22,7 +22,6 @@ public class ItemArrangement {
             }
         }
         count = new int[N+1];
-
         sc.close();
         //input  종료
 
@@ -46,6 +45,7 @@ public class ItemArrangement {
                 }
             }
         }
+
         int M = 0;
         for(int i=0; i<N; i++){
             for(int j=0; j<N; j++){
