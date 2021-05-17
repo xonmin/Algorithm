@@ -5,6 +5,7 @@ import com.company.W10.ItemArrangement;
 import com.company.W10.LowerGrade;
 import com.company.W10.TopDown;
 import com.company.W11.MakeTteokbokki;
+import com.company.W11.NoShowContents;
 import com.company.W11.SearchElement;
 import com.company.W7.*;
 import com.company.W8.IcedJuice;
@@ -39,8 +40,8 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        MakeTteokbokki mt = new MakeTteokbokki();
-        mt.exe();
+        NoShowContents nsc = new NoShowContents();
+        nsc.exe();
 
     }
 }
