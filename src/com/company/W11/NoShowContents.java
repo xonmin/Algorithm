@@ -165,6 +165,9 @@ public class NoShowContents {
         Collections.sort(contentsList);
 
         for(Contents c : contentsList){
+            if(c.reading == 'W'){
+                continue;
+            }
             System.out.printf("%c %.1f %d %d \n",c.genre,c.eval,c.row,c.col);
         }
 
