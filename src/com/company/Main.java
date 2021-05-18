@@ -7,6 +7,7 @@ import com.company.W10.TopDown;
 import com.company.W11.MakeTteokbokki;
 import com.company.W11.NoShowContents;
 import com.company.W11.SearchElement;
+import com.company.W12.SightMoving;
 import com.company.W7.*;
 import com.company.W8.IcedJuice;
 import com.company.W8.ImplementGame;
@@ -40,8 +41,8 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        NoShowContents nsc = new NoShowContents();
-        nsc.exe();
+        SightMoving sm = new SightMoving();
+        sm.exe();
 
     }
 }
