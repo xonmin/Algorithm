@@ -163,7 +163,6 @@ public class NoShowContents {
         }
 
         Collections.sort(contentsList);
-
         for(Contents c : contentsList){
             if(c.reading == 'W'){
                 continue;

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class SearchElement {
-
+        //p197 부품찾기
     public static int N , M;
     public static int[] arr1, arr2;
 

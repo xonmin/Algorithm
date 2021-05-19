@@ -9,7 +9,7 @@ public class MakeTteokbokki {
     public static int[] riceCake;
 
     public void exe(){
-
+        //이진 탐색으로 해야 runtime error 에서 벗어날 수 잇다.
         Scanner sc = new Scanner(System.in);
 
         N = sc.nextInt(); // 떡 개수
