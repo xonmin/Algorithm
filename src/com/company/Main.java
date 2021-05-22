@@ -7,6 +7,7 @@ import com.company.W10.TopDown;
 import com.company.W11.MakeTteokbokki;
 import com.company.W11.NoShowContents;
 import com.company.W11.SearchElement;
+import com.company.W12.AntSoldier;
 import com.company.W12.MakeOne;
 import com.company.W12.SightMoving;
 import com.company.W7.*;
@@ -42,8 +43,8 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        MakeOne mo = new MakeOne();
-        mo.exe();6
+        AntSoldier as = new AntSoldier();
+        as.exe();
 
     }
 }
