@@ -43,8 +43,8 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        AntSoldier as = new AntSoldier();
-        as.exe();
+        SightMoving sm = new SightMoving();
+        sm.exe();
 
     }
 }

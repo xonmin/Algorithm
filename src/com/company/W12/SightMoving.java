@@ -43,7 +43,7 @@ public class SightMoving {
 
         sc.close();
         //input 종료
-        int rtn = 0;
+        int rtn = 9999;
 
         visitCheck = new boolean[M][N];
 
