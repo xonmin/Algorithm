@@ -8,6 +8,7 @@ import com.company.W11.MakeTteokbokki;
 import com.company.W11.NoShowContents;
 import com.company.W11.SearchElement;
 import com.company.W12.AntSoldier;
+import com.company.W12.FloorWork;
 import com.company.W12.MakeOne;
 import com.company.W12.SightMoving;
 import com.company.W7.*;
@@ -43,8 +44,8 @@ public class Main {
 //        Execute execute = new Execute();
 //        execute.exe();
 
-        SightMoving sm = new SightMoving();
-        sm.exe();
+        FloorWork fw = new FloorWork();
+        fw.exe();
 
     }
 }
