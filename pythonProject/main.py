@@ -1,6 +1,7 @@
 # 백준 15686 문제 nxn 도시
 # 0 - 빈 칸 1 - 집 2 - 치킨 집
 # 거리 계산  |r1 - r2|  + |c1 - c2|
+# 기존 다른 팀원들 풀었던 문제
 from itertools import combinations
 
 N , M = map(int, input().split())
