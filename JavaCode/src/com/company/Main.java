@@ -41,11 +41,17 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-//        Execute execute = new Execute();
-//        execute.exe();
+      Scanner sc = new Scanner(System.in);
 
-        FloorWork fw = new FloorWork();
-        fw.exe();
+        String str = sc.nextLine();
+        int count =0;
+
+        String[] result = new String[str.length()];
+        str = str.trim();
+        result = str.split(" ");
+
+        count = result.length;
+        System.out.println(count)
 
     }
 }
