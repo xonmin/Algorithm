@@ -2,6 +2,7 @@ from itertools import combinations
 
 # 2309번 일곱 난쟁이
 
+#전체 경우의 수 -> 100이 되면 return
 dwarf = list()
 
 for i in range(9):
