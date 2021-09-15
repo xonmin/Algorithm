@@ -1,31 +1,41 @@
-#1449번 수리공 항승 
+from collections import deque
+import sys
+#18352번  특정 거리 도시 찾기
+N , M , K , X = map(int, input().split())
+load_list = [[] for _ in range(N+1)]
 
-N, L = map(int,input().split())
-holl_list = list(map(float,input().split()))
+for _ in range(M):
+    start , end  = map(int,sys.stdin.readline().split())
+    load_list[start].append(end)
+
 #로직
-holl_list.sort()
-holl_len = len(holl_list)
-
-ans = 1
-#만지려는 구멍 위치
-idx = 0
-
-now_holl = holl_list[0]
-cover_len = (holl_list[0] - 0.5) + L
-while True:
-    if(idx == N):
-        break
-    if(cover_len >= holl_list[idx]+0.5):
-        #다음꺼도 커버 가능 하다면
-        idx += 1
-    else :
-        #다음꺼가 커버 안된다면 테이프 하나 증가
-        cover_len = (holl_list[idx] - 0.5 + L)
-        idx += 1
-        ans += 1
 
 
+q = deque([X])
 
-print(ans)
-#print(N,L,holl_list,repair_range)
+#print("거리 정보",load_list)
+distance = [-1] * (N+1)
+distance[X] = 0
+
+result = 0
+
+while q:
+    city = q.popleft()
+    for end in load_list[city]:
+        if distance[end] == -1 :
+            distance[end] = distance[city] +1
+            q.append(end)
+
+for idx, d in enumerate(distance):
+    if K == d:
+        print(idx)
+        result += 1
+
+if result == 0:
+    print(-1)
+
+
+
+
+
 
