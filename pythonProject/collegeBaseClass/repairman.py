@@ -1,4 +1,4 @@
-#1449번 수리공 항승 
+#1449번 수리공 항승
 
 N, L = map(int,input().split())
 holl_list = list(map(float,input().split()))

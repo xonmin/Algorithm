@@ -30,7 +30,7 @@ def solution(s):
             # print(compressed_list)
             else:
                 compressed_list.append([1, tokenization_list[i]])
-            # print(compressed_list)
+
 
         my_list = sum(compressed_list, [])
 
@@ -48,8 +48,7 @@ def solution(s):
         except:
             pass
 
-
-        temp_ans = min(temp_ans, len(pressed_string))
+    temp_ans = min(temp_ans, len(pressed_string))
     print(temp_ans)
     answer = temp_ans
     return answer
