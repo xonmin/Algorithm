@@ -9,7 +9,6 @@ holl_len = len(holl_list)
 ans = 1
 #만지려는 구멍 위치
 idx = 0
-
 now_holl = holl_list[0]
 cover_len = (holl_list[0] - 0.5) + L
 while True:
