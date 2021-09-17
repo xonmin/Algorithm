@@ -1,41 +1,35 @@
+
 from collections import deque
-import sys
-#18352번  특정 거리 도시 찾기
-N , M , K , X = map(int, input().split())
-load_list = [[] for _ in range(N+1)]
-
-for _ in range(M):
-    start , end  = map(int,sys.stdin.readline().split())
-    load_list[start].append(end)
-
-#로직
+N = int(input())
+connect_num = int(input())
+connect_line = [[] for _ in range(N+1)]
 
 
-q = deque([X])
+for i in range(connect_num):
+    start, end = (list(map(int,input().split())))
+    connect_line[start].append(end)
+    connect_line[end].append(start)
+visited = [False] * (N+1)
 
-#print("거리 정보",load_list)
-distance = [-1] * (N+1)
-distance[X] = 0
+q = deque([1])
 
 result = 0
 
-while q:
-    city = q.popleft()
-    for end in load_list[city]:
-        if distance[end] == -1 :
-            distance[end] = distance[city] +1
-            q.append(end)
-
-for idx, d in enumerate(distance):
-    if K == d:
-        print(idx)
-        result += 1
-
-if result == 0:
-    print(-1)
+while q :
+    com = q.pop()
+    for connect in connect_line[com]:
+        if not visited[connect]:
+            visited[connect] = True
+            q.append(connect)
 
 
 
+visited[1] = False;
+
+count = 0
+for idx in visited:
+    if idx:
+        count += 1
 
 
-
+print(count)
