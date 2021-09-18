@@ -1,41 +1,50 @@
-from collections import deque
-import sys
-#18352번  특정 거리 도시 찾기
-N , M , K , X = map(int, input().split())
-load_list = [[] for _ in range(N+1)]
-
-for _ in range(M):
-    start , end  = map(int,sys.stdin.readline().split())
-    load_list[start].append(end)
-
-#로직
+# 1652번 누울 자리를 찾아라
 
 
-q = deque([X])
+# 입력
+n = int(input())
+room = [list(input().strip()) for _ in range(n)]
 
-#print("거리 정보",load_list)
-distance = [-1] * (N+1)
-distance[X] = 0
+# 로직
+# 가로 먼저 찾고
+# 세로 먼저 찾고
 
-result = 0
+horizon_count = 0
+vertical_count = 0
+chk_area = 0
 
-while q:
-    city = q.popleft()
-    for end in load_list[city]:
-        if distance[end] == -1 :
-            distance[end] = distance[city] +1
-            q.append(end)
+for i in range(n):
+    chk_area = 0
+    for j in range(n):
+        # X라면
+        if room[i][j] == 'X':
+            if (chk_area > 1):
+                horizon_count += 1
+            chk_area = 0
+        elif j == n - 1:  # 마지막이라면
+            if room[i][j] == '.':
+                chk_area += 1
+            if (chk_area > 1):
+                horizon_count += 1
+        # X도 아니고 마지막도 아니라면
+        else:
+            chk_area += 1
 
-for idx, d in enumerate(distance):
-    if K == d:
-        print(idx)
-        result += 1
+for i in range(n):
+    chk_area = 0
+    for j in range(n):
+        # X라면
+        if room[j][i] == 'X':
+            if chk_area > 1:
+                vertical_count += 1
+            chk_area = 0
+        elif j == n - 1:  # 마지막이라면
+            if room[j][i] == '.':
+                chk_area += 1
+            if chk_area > 1:
+                vertical_count += 1
+        # X도 아니고 마지막도 아니라면
+        else:
+            chk_area += 1
 
-if result == 0:
-    print(-1)
-
-
-
-
-
-
+print(horizon_count, vertical_count)
