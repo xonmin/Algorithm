@@ -1,4 +1,3 @@
-
 # 카카오 코딩테스트 2번 문제
 import string
 
