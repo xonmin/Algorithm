@@ -41,24 +41,23 @@ public class Q3 {
         // 만약 fee가 0 이라면 입차만 하고 출차를 안한 것 따라서 outime 23:59로 설정 후 계산
         car_num.sort(null);
         int [] answer = new int[car_num.size()];
-
+        int i=0;
        for (String key : car_num){
            ParkingLotInfo car = parkingInfoHashMap.get(key);
            System.out.println("차 번호 : " + key);
            int acc_time = car.getAcc_time();
-           if (acc_time == 0){
+
+           if (acc_time == 0 || car.getIn_time().compareTo(car.getOut_time())> 0){
+               //출차기록이 없거나, 다시 입차했는데 출차가 없을 때
                car.setOut_time("23:59");
                accumulate_time(car);
                acc_time = car.getAcc_time();
            }
            // 계산
            int the_fee = costcalc(fees, acc_time);
-
            // 배열에 넣기
-            for (int i=0; i<answer.length;i++){
-                answer[i] = the_fee;
-                System.out.println("리턴된 값 :" + answer[i]);
-            }
+           answer[i] = the_fee;
+           i++;
        }
         return answer;
     }
@@ -73,7 +72,8 @@ public class Q3 {
         if(acc_time < default_time){
             return default_fee;
         }
-        cost = default_fee + (int)(Math.ceil((acc_time-default_time)/per_min)) * per_fee;
+        cost = default_fee + (int)(Math.ceil((acc_time-default_time)/(double)per_min)) * per_fee;
+        System.out.println("반올림 결과 : " +default_fee+"+"+ (int)(Math.ceil((acc_time-default_time)/(double)per_min)) + "*"+per_fee);
         System.out.println("기격 : "+ cost);
         return cost;
     }
@@ -100,7 +100,7 @@ class ParkingLotInfo{
     String car_num;
     String in_time;
     String out_time;
-    int acc_time  ;
+    int acc_time;
     int fee;
 
     public int getAcc_time() {
