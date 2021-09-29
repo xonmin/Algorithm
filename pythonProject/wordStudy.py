@@ -17,3 +17,5 @@ if len(ans) > 1:
     print('?')
 else:
     print(ans[0])
+
+
