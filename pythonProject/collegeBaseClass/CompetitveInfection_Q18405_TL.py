@@ -1,5 +1,4 @@
 # 백준 18405번 경쟁적 전염
-import copy
 import sys
 from collections import deque
 
@@ -14,13 +13,10 @@ rangeY = [-1, 0, 1, 0]
 
 visited = [[False] * n for _ in range(n)]
 
-virus = []
-
 
 # logic
 
-def bfs(virus_type, x, y):
-    visited[x][y] = True
+def bfs(virus_type,x,y):
     for i in range(4):
         temp_x = x + rangeX[i]
         temp_y = y + rangeY[i]
@@ -29,19 +25,17 @@ def bfs(virus_type, x, y):
                 cylinder[temp_x][temp_y] = virus_type
                 visited[temp_x][temp_y] = True
 
-while s:
-    new_cylinder = copy.deepcopy(cylinder)
-    for i in range(n):
-        for j in range(n):
-            if cylinder[i][j] != 0:
-                virus.append((cylinder[i][j], i, j))
-    virus.sort()
-    for virus_type, i, j in virus:
-        bfs(virus_type,i,j)
-    if cylinder[x-1][y-1]:
-        break
-    s -= 1
 
+count = 0
+while count != s:
+    for virus_num in range(1,k+1):
+        for i in range(n):
+            for j in range(n):
+                if cylinder[i][j] == virus_num and visited[i][j] is False:
+                    virus_type = cylinder[i][j]
+                    visited[i][j] = True
+                    bfs(virus_type,i,j)
 
+    count += 1
 
-print(cylinder[x - 1][y - 1])
+print(cylinder[x-1][y-1])
