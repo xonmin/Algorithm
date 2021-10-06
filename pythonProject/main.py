@@ -7,7 +7,7 @@ import copy
 r, c = map(int, sys.stdin.readline().split())
 
 board = [list(sys.stdin.readline().rstrip()) for _ in range(r)]
-#d
+#테스트
 rangeX = [0, 1, 0, -1]
 rangeY = [-1, 0, 1, 0]
 visited = [[0] * c for _ in range(r)]
