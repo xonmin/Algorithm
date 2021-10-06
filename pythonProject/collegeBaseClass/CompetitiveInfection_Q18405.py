@@ -6,7 +6,7 @@ from collections import deque
 n, k = map(int, sys.stdin.readline().split())
 
 cylinder = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
-#테스트
+#본 레포 테스트
 s, x, y = map(int, sys.stdin.readline().split())
 
 rangeX = [0, 1, 0, -1]
