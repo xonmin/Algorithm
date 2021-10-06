@@ -1,19 +1,37 @@
-# 백준 1764번 듣보잡
 import sys
+from collections import deque
+import copy
 
-n, m = map(int,sys.stdin.readline().split())
+# 백준 1987번 알파벳
 
-noLook_set = set()
-noListen_set = set()
+r, c = map(int, sys.stdin.readline().split())
 
-for i in range(n):
-    noLook_set.add(sys.stdin.readline().rstrip())
-for i in range(m):
-    noListen_set.add(sys.stdin.readline().rstrip())
+board = [list(sys.stdin.readline().rstrip()) for _ in range(r)]
 
-noLookNoListen_set = list(noLook_set & noListen_set)
-noLookNoListen_set.sort()
+rangeX = [0, 1, 0, -1]
+rangeY = [-1, 0, 1, 0]
+visited = [[0] * c for _ in range(r)]
 
-print(len(noLookNoListen_set))
-for _ in noLookNoListen_set:
-    print(_)
+max_count = 0
+
+foot_print = list()
+
+
+def dfs(fp, x, y):
+    for i in range(4):
+        temp_x = x + rangeX[i]
+        temp_y = y + rangeY[i]
+        new_fp = copy.deepcopy(fp)
+        if 0 <= temp_x < r and 0 <= temp_y < c:
+            if board[temp_x][temp_y] not in fp:
+                new_fp.append(board[temp_x][temp_y])
+                visited[temp_x][temp_y] = visited[x][y] + 1
+                dfs(new_fp, temp_x, temp_y)
+
+
+visited[0][0] = 1
+foot_print.append(board[0][0])
+dfs(foot_print, 0, 0)
+
+# print(visited)
+print(max(map(max, visited)))
