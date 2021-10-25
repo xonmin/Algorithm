@@ -9,3 +9,4 @@ def findBrother(N, K):
     q.append(N)
     chk = 0
     for
+d
