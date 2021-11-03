@@ -29,7 +29,7 @@ def check_palindrome(n):
 all_condition = False
 
 while all_condition is False:
-    if check_palindrome(str(N)) and check_prime_num(int(N))  :
+    if check_palindrome(str(N)) and check_prime_num(int(N)):
         all_condition = True
     else:
         N += 1
