@@ -4,8 +4,6 @@ import sys
 N = int(sys.stdin.readline())
 
 
-
-
 def check_prime_num(n):
     if n == 1:
         return False
