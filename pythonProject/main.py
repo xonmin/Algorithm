@@ -1,28 +1,27 @@
-# 백준 회의실 배정 1931
+#백준 14501 - 퇴사 / 이코테 177p
+import copy
 import sys
+
 
 n = int(sys.stdin.readline())
 
-meeting = []
+consult = list()
+consult.append([0,0])
 
 for _ in range(n):
-    start, end = map(int, sys.stdin.readline().split())
-    meeting.append([start, end])
+    t, p = map(int, sys.stdin.readline().split())
+    consult.append([t,p])
 
 
-meeting.sort(key=lambda x: (x[1],x[0]))
+dp = [0]*20
 
-#meeting.sort(key=lambda x: x[1])
-# 반례 -> 44,44,34,24,14 답 3이 2로 조회
+for i in range(n+1):
+    # N 번째 날은 N+1 기준 수익과 N번째 날 수익 + Tn 중 큰 값 고르기
+    dp[i+1] = max(dp[i+1],dp[i])
 
-#print(meeting)
+    if i + consult[i][0] > n+1:
+        continue
+    dp[i+consult[i][0]] = max(dp[i+consult[i][0]],consult[i][1]+ dp[i])
 
-end_meet = meeting[0]
-ans = 1
 
-for m in meeting[1:]:
-    if m[0] >= end_meet[1]:
-        ans += 1
-        end_meet = m
-
-print(ans)
+print(max(dp[:n+2]))

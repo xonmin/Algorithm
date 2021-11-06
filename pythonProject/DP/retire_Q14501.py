@@ -13,12 +13,15 @@ for _ in range(n):
     consult.append([t,p])
 
 
-dp = [0 for i in range(n+1)]
+dp = [0]*20
 
-for i in range(n-1,-1,-1):  #뒤에서 부터 DP
+for i in range(n+1):
     # N 번째 날은 N+1 기준 수익과 N번째 날 수익 + Tn 중 큰 값 고르기
-    if i + consult[i][0] > n:
-        dp[i] = dp[i+1]
-    else :
-        dp[i] = max(consult[i][1] + dp[i + consult[i][0]],dp[i+1])
-print(dp[0])
+    dp[i+1] = max(dp[i+1],dp[i])
+
+    if i + consult[i][0] > n+1:
+        continue
+    dp[i+consult[i][0]] = max(dp[i+consult[i][0]],consult[i][1]+ dp[i])
+
+
+print(max(dp[:n+2]))
