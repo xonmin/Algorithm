@@ -4,6 +4,8 @@ def solution(time, plans):
     start_time = []
     arrive_time = []
     trip_list = []
+
+    trip_list.append('호치민')
     for plan in plans:
 
         destination.append(plan[0])
@@ -33,6 +35,7 @@ def solution(time, plans):
             need_arrive_time = 0
 
         if abs(need_start_time) + abs(need_arrive_time) <= time:
+            trip_list.pop()
             trip_list.append(destination[i])
 
     answer = "".join(trip_list[-1])
