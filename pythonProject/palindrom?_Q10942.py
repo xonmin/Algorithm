@@ -16,9 +16,7 @@ for _ in range(M):
     S, E = map(int, sys.stdin.readline().split())
     condi.append([S, E])
 
-dp = list()
-for _ in range(N+1):
-    dp.append([0]*(N+1))
+dp = [[0] * (N+1) for _ in range(N+1)]
 
 
 def check_palindrome(n):
@@ -40,7 +38,8 @@ def dp_palindrome(problem , N):
         dp[i][i] = 1
 
     for i in range(1,N): #두글자도 같으면 회문
-        dp[i][i+1] = dp[i+1][i] = 1
+        if problem[i] == problem[i+1]:
+            dp[i][i+1] = 1
 
     for i in range(2, N):  # 길이 2부터 i = s~e까지의 길이
         for j in range(1, N-i+1): # 왼쪽 끝과 오른쪽 끝이 같고, 그 사이의 수가 팰린이면 결국 팰린
@@ -57,7 +56,6 @@ def dp_palindrome(problem , N):
 #     print(_)
 
 dp_palindrome(problem,N)
-
 
 for S, E in condi:
     print(dp[S][E])
