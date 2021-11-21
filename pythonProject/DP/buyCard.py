@@ -1,3 +1,5 @@
+#11052번 카드 구매하기
+
 import sys
 
 '''
@@ -8,7 +10,6 @@ import sys
 구매하려는 카드 N 개
 Pi  = P1 ~ Pn 까지 주어짐
 '''
-
 
 n = int(sys.stdin.readline())
 
