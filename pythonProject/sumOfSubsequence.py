@@ -1,6 +1,6 @@
 import sys
 from itertools import combinations
-
+# 1182 부분 수열의 합
 input = sys.stdin.readline
 n, s = map(int, input().split())
 arr = list(map(int, input().split()))
