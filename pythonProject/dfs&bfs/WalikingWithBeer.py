@@ -4,6 +4,7 @@ from collections import deque
 t = int(sys.stdin.readline())
 
 '''
+9205번 맥주 마시면서 걸어가기 
 상근이 집 - 편의점 개수 (N) - 페스티벌 
 50m 당 맥주 1개
 한 박스에는 20개 
