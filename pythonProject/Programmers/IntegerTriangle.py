@@ -1,3 +1,6 @@
+import sys
+
+
 def solution(triangle):
 
     len_tri = len(triangle[-1])
@@ -20,4 +23,11 @@ def solution(triangle):
 
     return max(dp[-1])
 
-print(solution([[7], [3, 8], [8, 1, 0], [2, 7, 4, 4], [4, 5, 2, 6, 5]]))
+
+n = int(sys.stdin.readline())
+tri = []
+for i in range(1,n):
+    line = list(map(int,sys.stdin.readline().split()))
+    tri.append(line)
+#print(solution([[7], [3, 8], [8, 1, 0], [2, 7, 4, 4], [4, 5, 2, 6, 5]]))
+print(solution(tri))

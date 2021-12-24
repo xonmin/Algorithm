@@ -1,5 +1,5 @@
 import sys
-
+# Q1181 번
 
 def solution(n):
     word_list = []
