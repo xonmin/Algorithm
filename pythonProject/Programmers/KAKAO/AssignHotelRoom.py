@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 def solution(k, room_number):
     req = len(room_number)
 
