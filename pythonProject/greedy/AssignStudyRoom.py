@@ -1,7 +1,7 @@
 import sys
 import heapq
 
-
+#11000번 강의실 배정 (그리디, 힙큐)
 def solution(n, classTime):
     classTime.sort(key=lambda x: x[0])
 
