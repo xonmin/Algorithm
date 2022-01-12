@@ -11,14 +11,14 @@ def solution(arr):
             else:
                 ans.append(heapq.heappop(q))
         else:
-            heapq(q,num)
+            heapq.heappush(q,num)
             ans.append(heapq.heappop(q))
 
     for _ in ans:
         print(_)
 
 
-n =  int(sys.stdin.readline())
+n = int(sys.stdin.readline())
 
 arr = [int(sys.stdin.readline()) for _ in range(n)]
 
