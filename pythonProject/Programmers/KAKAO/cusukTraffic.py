@@ -2,41 +2,41 @@ import datetime
 
 
 def solution(lines):
-    answer = 0
+    # 처리 시간은 시작시간과 끝 시간을 모두 포함한다.
+    # 끝시간에서 생각했을 때 999 밀리초 이내에 같은 작업이 끝남과 동시에 시작이라면 초당
+    # 처리시간은 증가
 
     traffic = []
 
-    def transTime(lines):
+    def transTime(time, rangeTime):
+        h = int(time[:2]) * 3600
+        m = int(time[3:5]) * 60
+        s = int(time[6:8])
+        milli = int(time[9:])
 
-        line_split = lines.split()
-        timeSplit = line_split[1].split(":")
+        endTime = (h + m + s) * 1000 + milli
 
-        seconds = float(timeSplit[0]) * 3600 + float(timeSplit[1]) * 60 + float(timeSplit[2])
-        rangeTime = float(line_split[2][0:-1])
-
-        startTime = seconds - rangeTime + 0.001
-        endTime = seconds + 1
+        duration = int(float(rangeTime[:-1])) * 1000
+        startTime = endTime - duration + 1
 
         return [startTime, endTime]
 
     for log in lines:
-        traffic.append(transTime(log))
+        time = log.split()
+        traffic.append(transTime(time[1], time[2]))
 
     traffic.sort()
 
     max_ans = 0
-    print(traffic)
-    for idx, log in enumerate(traffic):
-        now_traffic = 1
-        for comp in traffic[idx + 1:]:
-            if comp[0] < log[1]:
-                now_traffic += 1
-                max_ans = max(now_traffic, max_ans)
-            else:
-                break
+    for i in range(len(lines)):
+        now_traffic = 0
+        cur_endTime = traffic[i][1]
 
-    if max_ans == 0:
-        return 1
+        for j in range(i, len(lines)):
+            if cur_endTime > traffic[j][0] - 1000:
+                now_traffic += 1
+        max_ans = max(now_traffic, max_ans)
+
     print(max_ans)
     return max_ans
 
