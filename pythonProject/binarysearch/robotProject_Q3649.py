@@ -15,6 +15,7 @@ while True:
             lego[l] += 1
             lego_list.append(l)
 
+
         for l in lego_list:
 
             remain = x - l
@@ -32,7 +33,7 @@ while True:
                         ans = [l[1], l[0]]
                     else:
                         ans = [l[0], l[1]]
-            print("yes", ans[0], ans[1])
+            print("yes", ans[0],ans[1])
         else:
             print("danger")
 
