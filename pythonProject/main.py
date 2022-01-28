@@ -1,40 +1,40 @@
-import bisect
 import sys
-from collections import defaultdict
 
-while True:
-    try:
-        x = int(sys.stdin.readline()) * 10000000
-        n = int(sys.stdin.readline())
 
-        lego = defaultdict(int)
-        lego_list = []
-        ans_candidate = []
-        for i in range(n):
-            l = int(sys.stdin.readline())
-            lego[l] += 1
-            lego_list.append(l)
+def solution(S, T):
+    # S -> T
+    """
+    문자열의 뒤에 A를 추가
+    문자열의 뒤에 B를 추가하고 문자열 뒤집기
+    T -> S 로 찾기
 
-        for l in lego_list:
+    S -> T
+    CASE 1 A-A : 1번 연산
+    CASE 2 A-B  : X
+    CASE 3 B-A 둘다
+    CASE 4 B-B 2번
+    """
 
-            remain = x - l
-            lego[l] -= 1
+    def dfs(T):
+        if T == S:
+            return 1
+        if len(T) <= len(S):
+            return 0
 
-            if remain in lego:  # 딕셔너리에 나머지가 있으면
-                if lego[remain] != 0:  # 이 떄 해당 레고 개수가 0이상이면
-                    ans_candidate.append([l, remain])
+        rtn = 0
+        if T[-1] == 'A':
+            rtn = dfs(T[:-1])
 
-        if ans_candidate:
-            ans = [0, 0]
-            for l in ans_candidate:
-                if abs(ans[0] - ans[1]) <= abs(l[0] - l[1]):
-                    if l[0] > l[1]:
-                        ans = [l[1], l[0]]
-                    else:
-                        ans = [l[0], l[1]]
-            print("yes", ans[0], ans[1])
-        else:
-            print("danger")
+        if rtn == 1:
+            return 1
+        if T[0] == 'B':
+            tmp_T = T[::-1]
+            rtn = dfs(tmp_T[:-1])
+        return rtn
 
-    except:
-        break
+    return dfs(T)
+
+S = list(sys.stdin.readline().rstrip())
+T = list(sys.stdin.readline().rstrip())
+
+print(solution(S, T))
