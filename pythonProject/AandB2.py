@@ -34,7 +34,7 @@ def solution(S, T):
 
     return dfs(T)
 
-S = list(sys.stdin.readline().rstrip())
-T = list(sys.stdin.readline().rstrip())
+S = sys.stdin.readline().rstrip()
+T = sys.stdin.readline().rstrip()
 
 print(solution(S, T))
