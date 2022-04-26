@@ -11,7 +11,7 @@ op = []
 
 for idx, i in enumerate(op_count):
     for n in range(i):
-        op.append(operator_list[idx])
+        op.append(operator_list[n])
 
 oper_per = list(set(permutations(op, len(op))))
 
