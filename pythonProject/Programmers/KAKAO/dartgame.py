@@ -1,47 +1,4 @@
 import string
-
-
-def scoring(n, opt):
-    if opt == 'S':
-        return n
-    elif opt == 'D':
-        return n ** 2
-    else:
-        return n ** 3
-
-
-def star(prev, now):
-    return [prev * 2, now * 2]
-
-
-def acha(now):
-    return -now
-
-
-def solution(dartResult):
-    answer = 0
-
-    result = dartResult.split(string.digits)
-    prev, now = 0, 0
-    for case in result:
-        if case.find('*'):
-            answer -= prev
-            now = scoring(case[0], case[1])
-            prev, now = star(prev, now)
-            answer += prev + now
-        elif case.find('#'):
-            now = scoring(case[0], case[1])
-            now = acha(now)
-            answer += now
-        else:
-            now = scoring(case[0], case[1])
-            answer += now
-        prev = now
-
-    return answer
-
-
-print(solution(import string
 import re
 
 
@@ -113,4 +70,3 @@ print(solution('1T2D3D#'))
 print(solution('1D2S0T'))
 print(solution('1S*2T*3S'))
 print(solution('1D2S#10S'))
-'1S2D*3T'))
