@@ -1,10 +1,21 @@
 def solution(k, dungeons):
-    dp = []
+    l = len(dungeons)
+    hp = [[[k, 0] for _ in range(k + 1)] for _ in range(l + 1)]
+    remain_hp = k
+    explore = 0
+    for i in range(1, l + 1):
+        required, use = dungeons[i - 1]
+        for j in range(1, k + 1):
+            if remain_hp < required:
+                hp[i][j] = hp[i - 1][j]
+            else:
+                if hp[i - 1][j][0] < hp[i - 1][j - required][0] - use:
+                    hp[i][j] = hp[i - 1][j]
+                else:
+                    hp[i][j][0] = hp[i - 1][j - required][0] - use
+                    hp[i][j][1] = hp[i - 1][j - required][1] + 1
+                    explore = max(explore, hp[i][j][1])
+    return explore
 
-    dungeons.sort(key=lambda x: x[0])
 
-    for i in range(len(dungeons)):
-        if k - (dungeons[i][0] + dungeons[i][1]) >= 0:
-            dp[i + 1] = max()
-
-    return -1
+print(solution(80, [[80, 20], [50, 40], [30, 10]]))
