@@ -2,7 +2,7 @@ from collections import defaultdict
 
 
 def change(problem, score):
-    transform_dict = {"TR": "RT", "FC": "CF", "MJ": "JM", "NA": "AN"}
+    transform_dict = {"TR": "RT", "FC": "CF", "MJ": "JM", "AN": "NA"}
     if problem in transform_dict.keys():
         score = 4 - score
         problem = transform_dict[problem]
@@ -26,13 +26,7 @@ def solution(survey, choices):
 
     for i in range(4):
         if di[pro[i]] > 0:
-            answer = answer + pro[i][1]
-        else:
             answer = answer + pro[i][0]
-
-    print(di)
+        else:
+            answer = answer + pro[i][1]
     return answer
-
-
-
-print(solution(["AN", "CF", "MJ", "RT", "NA"], [5, 3, 2, 7, 5]))
