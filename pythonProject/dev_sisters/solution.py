@@ -1,31 +1,31 @@
-# def solution1(score):
-#     answer = 0
-#
-#     if score > 100:
-#         answer += score // 100
-#         score %= 100
-#     if score > 50:
-#         answer += score // 50
-#         score %= 50
-#     if score > 5:
-#         answer += score // 5
-#         score %= 5
-#     answer += score
-#
-#     return answer
-#
-#
-# def solution2(capacity, routes):
-#     answer = True
-#     way = [0 for _ in range(1001)]
-#     for route in routes:
-#         for i in range(route[1], route[2]):
-#             way[i] += route[0]
-#
-#     if max(way) > capacity:
-#         answer = False
-#
-#     return answer
+def solution1(score):
+    answer = 0
+
+    if score > 100:
+        answer += score // 100
+        score %= 100
+    if score > 50:
+        answer += score // 50
+        score %= 50
+    if score > 5:
+        answer += score // 5
+        score %= 5
+    answer += score
+
+    return answer
+
+
+def solution2(capacity, routes):
+    answer = True
+    way = [0 for _ in range(1001)]
+    for route in routes:
+        for i in range(route[1], route[2]):
+            way[i] += route[0]
+
+    if max(way) > capacity:
+        answer = False
+
+    return answer
 
 
 def solution(pouches):
